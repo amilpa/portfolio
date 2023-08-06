@@ -4,16 +4,21 @@ import Sun from "../assets/sun.svg";
 import Moon from "../assets/moon.svg";
 ---
 
-<div class="w-full h-14 bg-zinc-50 dark:bg-neutral-800 backdrop-blur-lg">
-  <div class="w-[730px] h-full m-auto flex items-center justify-between">
+<div
+  class="sticky top-0 z-10 w-full h-14 md:h-14 pl-4 md:px-0 bg-zinc-50 dark:bg-zinc-900 backdrop-blur-lg"
+>
+  <div
+    class="w-full md:w-[760px] relative h-full m-auto flex items-center justify-between"
+  >
     <div class="flex items-center">
       <a
-        class="animate text-lg dark:text-white font-semibold flex items-center gap-[2px] tracking-tighter"
+        class="animate text-xl md:text-lg dark:text-white font-semibold flex items-center gap-[2px] tracking-tighter"
       >
         <span class="fa-solid fa-code"></span>Amil P A</a
       >
-      <div class="pr-8 dark:text-white">
-        <a class="inline ml-8 hover:underline hover:underline-offset-2">About</a
+      <div class="context-menu-mobile md:context-menu-desktop dark:text-white">
+        <a class="colorize inline ml-8 hover:underline hover:underline-offset-2"
+          >About</a
         >
         <a class="inline ml-8 hover:underline hover:underline-offset-2">Works</a
         >
@@ -21,11 +26,12 @@ import Moon from "../assets/moon.svg";
           >Contact</a
         >
         <a class="inline ml-8 hover:underline hover:underline-offset-2"
-          >Source</a
+          ><span class="fa-brands fa-github mr-1 hidden md:inline"
+          ></span>Source</a
         >
       </div>
     </div>
-    <div>
+    <div class="md:mr-4 flex items-center">
       <button
         class="relative transition-all duration-300 toggle bg-blue-500 hover:bg-blue-600 w-[40px] h-[40px] rounded-md"
         ><span
@@ -34,6 +40,21 @@ import Moon from "../assets/moon.svg";
           class="sun-icon icon fa-solid fa-sun opacity-0 text-black text-lg"
         ></span></button
       >
+      <div class="w-[40px] h-[40px] flex justify-center md:hidden mx-2">
+        <button
+          class="hamburger w-full px-2 active:bg-zinc-200 dark:active:bg-zinc-800"
+        >
+          <span
+            class="bg-black dark:bg-white before:bg-black dark:before:bg-white after:bg-black dark:after:bg-white"
+          ></span>
+          <span
+            class="bg-black dark:bg-white before:bg-black dark:before:bg-white after:bg-black dark:after:bg-white"
+          ></span>
+          <span
+            class="bg-black dark:bg-white before:bg-black dark:before:bg-white after:bg-black dark:after:bg-white"
+          ></span>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -49,12 +70,90 @@ import Moon from "../assets/moon.svg";
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  .hamburger {
+    width: 20px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    border: 1px solid gray;
+    border-radius: 6px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .hamburger span {
+    display: inline-block;
+    width: 15px;
+    height: 2px;
+  }
+
+  .context-menu-desktop {
+    display: block;
+    position: static;
+    width: 100%;
+    background-color: none;
+    font-size: 1rem;
+    border-radius: 0;
+    animation: none;
+  }
+
+  .context-menu-desktop a {
+    padding: 0;
+    margin-left: 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .context-menu-mobile {
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      position: absolute;
+      top: 30px;
+      right: 5px;
+      padding: 8px 0px;
+      border: 2px solid #eeeeee;
+      width: 200px;
+      background-color: #fff;
+      font-size: 1rem;
+      border-radius: 8px;
+      transition: opacity 0.2s, top 0.2s;
+      pointer-events: none;
+    }
+
+    .context-menu-mobile.dark {
+      background-color: hsl(216, 6%, 16%);
+      border-color: #3b3e42;
+    }
+
+    .context-menu-mobile.dark .colorize {
+      background-color: hsl(216, 6%, 25%);
+    }
+
+    .context-menu-mobile a {
+      padding: 6px 10px;
+      margin-left: 0px;
+    }
+    .context-menu-mobile .colorize {
+      background-color: #eeeeee;
+    }
+    .active {
+      top: 60px;
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
 </style>
 
 <script>
   const toggle = document.getElementsByClassName("toggle")[0];
   const sun_icon = document.getElementsByClassName("sun-icon")[0];
   const moon_icon = document.getElementsByClassName("moon-icon")[0];
+  const hamburger = document.getElementsByClassName("hamburger")[0];
+  const context = document.getElementsByClassName("context-menu-mobile")[0];
 
   toggle.addEventListener("click", () => {
     document.documentElement.classList.toggle("dark");
@@ -62,5 +161,20 @@ import Moon from "../assets/moon.svg";
     toggle.classList.toggle("hover:bg-orange-300");
     moon_icon.classList.toggle("opacity-0");
     sun_icon.classList.toggle("opacity-0");
+    context.classList.toggle("dark");
   });
+
+  hamburger.addEventListener("click", () => {
+    context?.classList.toggle("active");
+  });
+  if (window.innerWidth <= 768) {
+    document.addEventListener("click", (event) => {
+      // check if clicked on anything except hamburger and toggle
+      if (
+        !hamburger.contains(event.target as Node) &&
+        !toggle.contains(event.target as Node)
+      )
+        context?.classList.remove("active");
+    });
+  }
 </script>

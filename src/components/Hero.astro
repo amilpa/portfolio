@@ -2,35 +2,51 @@
 import Profile from "../assets/site_pic.jpg";
 ---
 
-<div>
+<div class="relative -z-10">
   <img
     src={Profile}
-    class="h-[120px] relative top-12 rounded-full m-auto border-2 border-white dark:border-gray-"
+    class="h-[100px] md:h-[120px] relative top-12 rounded-full m-auto border-2 border-white dark:border-gray-400 dark:border-gray-"
     alt=""
   />
-  <h1 class="relative top-14 text-3xl dark:text-white font-medium text-center">
+  <h1
+    class="relative top-14 text-2xl md:text-3xl dark:text-white font-medium text-center"
+  >
     Amil P A
   </h1>
-  <ul class="dynamic-texts relative top-14 text-center text-xl dark:text-white">
+  <ul
+    class="dynamic-texts relative top-16 text-center text-lg md:text-xl dark:text-white"
+  >
     <li>
       <span
-        class="after:bg-zinc-100 after:dark:bg-neutral-800 after:border-l-2 after:border-black dark:after:border-white"
+        class="after:bg-zinc-100 after:dark:bg-zinc-900 after:border-l-2 after:border-black dark:after:border-white"
         >Designer</span
       >
     </li>
     <li>
       <span
-        class="after:bg-zinc-100 after:dark:bg-neutral-800 after:border-l-2 after:border-black dark:after:border-white"
+        class="after:bg-zinc-100 after:dark:bg-zinc-900 after:border-l-2 after:border-black dark:after:border-white"
         >Developer</span
       >
     </li>
     <li>
       <span
-        class="after:bg-zinc-100 after:dark:bg-neutral-800 after:border-l-2 after:border-black dark:after:border-white"
+        class="after:bg-zinc-100 after:dark:bg-zinc-900 after:border-l-2 after:border-black dark:after:border-white"
         >Creator</span
       >
     </li>
   </ul>
+  <div class="relative top-20 text-center">
+    <!-- <button class="fa-brands fa-github dark:text-white text-2xl"></button>
+    <button class="fa-brands fa-linkedin dark:text-white text-2xl"></button> -->
+    <button
+      class="transition-opacity text-white dark:text-black bg-emerald-600 dark:bg-emerald-200 rounded-sm px-3 py-1 md:text-lg font-semibold hover:opacity-80"
+      >Contact</button
+    >
+    <button
+      class="ml-1 transition-opacity text-white dark:text-black bg-zinc-800 dark:bg-zinc-100 px-3 py-1 rounded-sm md:text-lg font-semibold hover:opacity-80"
+      >Resume</button
+    >
+  </div>
 </div>
 
 <style>
