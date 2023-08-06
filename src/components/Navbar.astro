@@ -1,0 +1,66 @@
+---
+import Icon from "../assets/embed-svgrepo-com.svg";
+import Sun from "../assets/sun.svg";
+import Moon from "../assets/moon.svg";
+---
+
+<div class="w-full h-14 bg-zinc-50 dark:bg-neutral-800 backdrop-blur-lg">
+  <div class="w-[730px] h-full m-auto flex items-center justify-between">
+    <div class="flex items-center">
+      <a
+        class="animate text-lg dark:text-white font-semibold flex items-center gap-[2px] tracking-tighter"
+      >
+        <span class="fa-solid fa-code"></span>Amil P A</a
+      >
+      <div class="pr-8 dark:text-white">
+        <a class="inline ml-8 hover:underline hover:underline-offset-2">About</a
+        >
+        <a class="inline ml-8 hover:underline hover:underline-offset-2">Works</a
+        >
+        <a class="inline ml-8 hover:underline hover:underline-offset-2"
+          >Contact</a
+        >
+        <a class="inline ml-8 hover:underline hover:underline-offset-2"
+          >Source</a
+        >
+      </div>
+    </div>
+    <div>
+      <button
+        class="relative transition-all duration-300 toggle bg-blue-500 hover:bg-blue-600 w-[40px] h-[40px] rounded-md"
+        ><span
+          class="transition-all moon-icon icon fa-solid fa-moon text-white text-lg"
+        ></span><span
+          class="sun-icon icon fa-solid fa-sun opacity-0 text-black text-lg"
+        ></span></button
+      >
+    </div>
+  </div>
+</div>
+
+<style>
+  .animate:hover > span {
+    rotate: -19deg;
+    transition: all 0.2s ease-in-out;
+  }
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+
+<script>
+  const toggle = document.getElementsByClassName("toggle")[0];
+  const sun_icon = document.getElementsByClassName("sun-icon")[0];
+  const moon_icon = document.getElementsByClassName("moon-icon")[0];
+
+  toggle.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+    toggle.classList.toggle("bg-orange-200");
+    toggle.classList.toggle("hover:bg-orange-300");
+    moon_icon.classList.toggle("opacity-0");
+    sun_icon.classList.toggle("opacity-0");
+  });
+</script>
