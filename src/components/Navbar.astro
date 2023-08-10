@@ -14,18 +14,17 @@ import Moon from "../assets/moon.svg";
       <a
         class="animate text-xl md:text-lg dark:text-white font-semibold flex items-center gap-[2px] tracking-tighter"
       >
-        <span class="fa-solid fa-code"></span>Amil P A</a
+        <span class="fa-solid fa-code transition-all"></span>Amil P A</a
       >
-      <div class="context-menu-mobile md:context-menu-desktop dark:text-white">
-        <a class="colorize inline ml-8 hover:underline hover:underline-offset-2"
-          >About</a
+      <div class="hidden md:block dark:text-white">
+        <a class="inline ml-8 hover:underline hover:underline-offset-2">About</a
         >
-        <a class="inline ml-8 hover:underline hover:underline-offset-2">Works</a
+        <a class="inline ml-6 hover:underline hover:underline-offset-2">Works</a
         >
-        <a class="inline ml-8 hover:underline hover:underline-offset-2"
+        <a class="inline ml-6 hover:underline hover:underline-offset-2"
           >Contact</a
         >
-        <a class="inline ml-8 hover:underline hover:underline-offset-2"
+        <a class="inline ml-6 hover:underline hover:underline-offset-2"
           ><span class="fa-brands fa-github mr-1 hidden md:inline"
           ></span>Source</a
         >
@@ -33,27 +32,41 @@ import Moon from "../assets/moon.svg";
     </div>
     <div class="md:mr-4 flex items-center">
       <button
-        class="relative transition-all duration-300 toggle bg-blue-500 hover:bg-blue-600 w-[40px] h-[40px] rounded-md"
+        class="toggle relative transition-all duration-300 text-lg bg-blue-500 hover:bg-blue-600 w-[40px] h-[40px] rounded-md"
         ><span
-          class="transition-all moon-icon icon fa-solid fa-moon text-white text-lg"
+          class="moon-icon absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all fa-solid fa-moon text-white"
         ></span><span
-          class="sun-icon icon fa-solid fa-sun opacity-0 text-black text-lg"
+          class="sun-icon absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all fa-solid fa-sun opacity-0 text-black"
         ></span></button
       >
-      <div class="w-[40px] h-[40px] flex justify-center md:hidden mx-2">
-        <button
-          class="hamburger w-full px-2 active:bg-zinc-200 dark:active:bg-zinc-800"
+      <button
+        class="hamburger w-[40px] h-[40px] md:hidden mx-2 border-2 border-gray-300 dark:border-gray-700 grid place-items-center active:bg-zinc-200 dark:active:bg-zinc-800 text-black dark:text-white rounded-md"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
         >
-          <span
-            class="bg-black dark:bg-white before:bg-black dark:before:bg-white after:bg-black dark:after:bg-white"
-          ></span>
-          <span
-            class="bg-black dark:bg-white before:bg-black dark:before:bg-white after:bg-black dark:after:bg-white"
-          ></span>
-          <span
-            class="bg-black dark:bg-white before:bg-black dark:before:bg-white after:bg-black dark:after:bg-white"
-          ></span>
-        </button>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <div
+        class="context block md:hidden transition-all absolute top-10 opacity-0 right-2 pointer-events-none"
+      >
+        <nav
+          class="w-44 flex flex-col gap-1 bg-white dark:bg-zinc-900 border-2 border-gray-200 dark:border-gray-800 py-2 text-md dark:text-white rounded-md"
+        >
+          <a class="px-2 py-1 bg-gray-200 dark:bg-gray-800">About</a>
+          <a class="px-2 py-1">Works</a>
+          <a class="px-2 py-1">Contact</a>
+          <a class="px-2 py-1">Source</a>
+        </nav>
       </div>
     </div>
   </div>
@@ -61,90 +74,7 @@ import Moon from "../assets/moon.svg";
 
 <style>
   .animate:hover > span {
-    rotate: -19deg;
-    transition: all 0.2s ease-in-out;
-  }
-  .icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .hamburger {
-    width: 20px;
-    height: 40px;
-    cursor: pointer;
-    position: relative;
-    display: flex;
-    border: 1px solid gray;
-    border-radius: 6px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2px;
-  }
-
-  .hamburger span {
-    display: inline-block;
-    width: 15px;
-    height: 2px;
-  }
-
-  .context-menu-desktop {
-    display: block;
-    position: static;
-    width: 100%;
-    background-color: none;
-    font-size: 1rem;
-    border-radius: 0;
-    animation: none;
-  }
-
-  .context-menu-desktop a {
-    padding: 0;
-    margin-left: 2rem;
-  }
-
-  @media screen and (max-width: 768px) {
-    .context-menu-mobile {
-      display: flex;
-      flex-direction: column;
-      opacity: 0;
-      position: absolute;
-      top: 30px;
-      right: 5px;
-      padding: 8px 0px;
-      border: 2px solid #eeeeee;
-      width: 200px;
-      background-color: #fff;
-      font-size: 1rem;
-      border-radius: 8px;
-      transition: opacity 0.2s, top 0.2s;
-      pointer-events: none;
-    }
-
-    .context-menu-mobile.dark {
-      background-color: hsl(216, 6%, 16%);
-      border-color: #3b3e42;
-    }
-
-    .context-menu-mobile.dark .colorize {
-      background-color: hsl(216, 6%, 25%);
-    }
-
-    .context-menu-mobile a {
-      padding: 6px 10px;
-      margin-left: 0px;
-    }
-    .context-menu-mobile .colorize {
-      background-color: #eeeeee;
-    }
-    .active {
-      top: 60px;
-      opacity: 1;
-      pointer-events: all;
-    }
+    rotate: -17deg;
   }
 </style>
 
@@ -153,7 +83,7 @@ import Moon from "../assets/moon.svg";
   const sun_icon = document.getElementsByClassName("sun-icon")[0];
   const moon_icon = document.getElementsByClassName("moon-icon")[0];
   const hamburger = document.getElementsByClassName("hamburger")[0];
-  const context = document.getElementsByClassName("context-menu-mobile")[0];
+  const context = document.getElementsByClassName("context")[0];
 
   toggle.addEventListener("click", () => {
     document.documentElement.classList.toggle("dark");
@@ -161,20 +91,23 @@ import Moon from "../assets/moon.svg";
     toggle.classList.toggle("hover:bg-orange-300");
     moon_icon.classList.toggle("opacity-0");
     sun_icon.classList.toggle("opacity-0");
-    context.classList.toggle("dark");
+  });
+  hamburger.addEventListener("click", () => {
+    context.classList.toggle("top-16");
+    context.classList.toggle("top-10");
+    context?.classList.toggle("opacity-1");
+    context?.classList.toggle("pointer-events-auto");
+    context?.classList.toggle("opacity-0");
   });
 
-  hamburger.addEventListener("click", () => {
-    context?.classList.toggle("active");
+  // remove context menu on click outside
+  document.addEventListener("click", (e) => {
+    if (!hamburger.contains(e.target as Node)) {
+      context.classList.remove("top-16");
+      context.classList.add("top-10");
+      context?.classList.remove("opacity-1");
+      context?.classList.remove("pointer-events-auto");
+      context?.classList.add("opacity-0");
+    }
   });
-  if (window.innerWidth <= 768) {
-    document.addEventListener("click", (event) => {
-      // check if clicked on anything except hamburger and toggle
-      if (
-        !hamburger.contains(event.target as Node) &&
-        !toggle.contains(event.target as Node)
-      )
-        context?.classList.remove("active");
-    });
-  }
 </script>

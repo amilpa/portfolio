@@ -5,89 +5,69 @@ import Profile from "../assets/site_pic.jpg";
 <div class="relative -z-10">
   <img
     src={Profile}
-    class="h-[100px] md:h-[120px] relative top-12 rounded-full m-auto border-2 border-white dark:border-gray-400 dark:border-gray-"
+    class="h-[80px] md:h-[100px] relative top-12 rounded-full m-auto border-2 border-white dark:border-gray-400 dark:border-gray-"
     alt=""
   />
   <h1
-    class="relative top-14 text-2xl md:text-3xl dark:text-white font-medium text-center"
+    class="relative top-12 text-center font-semibold text-2xl dark:text-white"
   >
     Amil P A
   </h1>
-  <ul
-    class="dynamic-texts relative top-16 text-center text-lg md:text-xl dark:text-white"
+  <div
+    class="typing-container relative top-12 text-center dark:text-white text-xl"
   >
-    <li>
-      <span
-        class="after:bg-zinc-100 after:dark:bg-zinc-900 after:border-l-2 after:border-black dark:after:border-white"
-        >Designer</span
-      >
-    </li>
-    <li>
-      <span
-        class="after:bg-zinc-100 after:dark:bg-zinc-900 after:border-l-2 after:border-black dark:after:border-white"
-        >Developer</span
-      >
-    </li>
-    <li>
-      <span
-        class="after:bg-zinc-100 after:dark:bg-zinc-900 after:border-l-2 after:border-black dark:after:border-white"
-        >Creator</span
-      >
-    </li>
-  </ul>
-  <div class="relative top-20 text-center">
-    <!-- <button class="fa-brands fa-github dark:text-white text-2xl"></button>
-    <button class="fa-brands fa-linkedin dark:text-white text-2xl"></button> -->
+    <span id="typed-text" class="border-r-2 border-black dark:border-white"
+    ></span>
+  </div>
+  <div class="relative top-16 text-center">
     <button
-      class="transition-opacity text-white dark:text-black bg-emerald-600 dark:bg-emerald-200 rounded-sm px-3 py-1 md:text-lg font-semibold hover:opacity-80"
+      class="transition-opacity text-white dark:text-black bg-emerald-600 dark:bg-emerald-200 rounded-sm px-3 py-1 text-base font-semibold hover:opacity-80"
       >Contact</button
     >
     <button
-      class="ml-1 transition-opacity text-white dark:text-black bg-zinc-800 dark:bg-zinc-100 px-3 py-1 rounded-sm md:text-lg font-semibold hover:opacity-80"
+      class="ml-1 transition-opacity text-white dark:text-black bg-zinc-800 dark:bg-zinc-100 px-3 py-1 rounded-sm text-base font-semibold hover:opacity-80"
       >Resume</button
     >
   </div>
 </div>
 
-<style>
-  .dynamic-texts {
-    height: 30px;
-    overflow: hidden;
-  }
+<script>
+  const words = ["Developer", "Designer", "Creator"];
+  const typedTextElement = document.getElementById("typed-text");
 
-  .dynamic-texts li {
-    position: relative;
-    margin-bottom: 10px;
-    top: 0;
-    animation: slide 6s steps(3) infinite;
-  }
+  function typeAndDeleteWords() {
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isTyping = true;
 
-  @keyframes slide {
-    100% {
-      top: -120px;
+    function typeNextChar() {
+      const word = words[wordIndex];
+
+      if (typedTextElement)
+        typedTextElement.textContent = word.substring(0, charIndex);
+
+      if (isTyping) {
+        charIndex++;
+        if (charIndex > word.length) {
+          isTyping = false;
+          setTimeout(typeNextChar, 500); // Delay before deleting
+        } else {
+          setTimeout(typeNextChar, 80); // Typing speed
+        }
+      } else {
+        charIndex--;
+        if (charIndex < 0) {
+          isTyping = true;
+          wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(typeNextChar, 10); // Delay before typing the new word
+        } else {
+          setTimeout(typeNextChar, 80); // Deletion speed
+        }
+      }
     }
+
+    typeNextChar();
   }
 
-  .dynamic-texts li span {
-    position: relative;
-  }
-
-  .dynamic-texts li span:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    animation: typing 2s steps(9) infinite;
-  }
-
-  @keyframes typing {
-    40%,
-    60% {
-      left: 100%;
-    }
-    100% {
-      left: 0;
-    }
-  }
-</style>
+  typeAndDeleteWords();
+</script>
