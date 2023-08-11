@@ -5,16 +5,18 @@ import Moon from "../assets/moon.svg";
 ---
 
 <div
-  class="sticky top-0 z-10 w-full h-14 md:h-14 pl-4 md:px-0 bg-zinc-50 dark:bg-zinc-900 backdrop-blur-lg"
+  class="sticky top-0 z-10 w-full h-14 md:h-14 pl-4 md:px-0 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-xl"
 >
   <div
     class="w-full md:w-[760px] relative h-full m-auto flex items-center justify-between"
   >
-    <div class="flex items-center">
+    <div class="flex items-center group">
       <a
-        class="animate text-xl md:text-lg dark:text-white font-semibold flex items-center gap-[2px] tracking-tighter"
+        class="text-xl md:text-lg dark:text-white font-semibold flex items-center gap-[2px] tracking-tighter"
       >
-        <span class="fa-solid fa-code transition-all"></span>Amil P A</a
+        <span
+          class="fa-solid fa-code group-hover:-rotate-[17deg] transition-all"
+        ></span>Amil P A</a
       >
       <div class="hidden md:block dark:text-white">
         <a class="inline ml-8 hover:underline hover:underline-offset-2">About</a
@@ -71,12 +73,6 @@ import Moon from "../assets/moon.svg";
     </div>
   </div>
 </div>
-
-<style>
-  .animate:hover > span {
-    rotate: -17deg;
-  }
-</style>
 
 <script>
   const toggle = document.getElementsByClassName("toggle")[0];
