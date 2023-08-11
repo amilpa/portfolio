@@ -1,0 +1,68 @@
+<div class="relative mt-8 dark:text-white px-6 md:px-0">
+  <span class="text-xl font-semibold border-b-2 border-black dark:border-white"
+    >About</span
+  >
+  <p class="mt-4 text-justify indent-6 leading-relaxed">
+    Hey there, I'm Amil, and I'm not your typical web developer. I'm all about
+    <span class="highlight-animate before:bg-pink-200 dark:before:bg-pink-900"
+      >action</span
+    >, creating functional web apps that speak for themselves. My passion for
+    web development goes beyond words – it's a burning desire to <span
+      class="highlight-animate before:bg-green-200 dark:before:bg-green-900"
+      >bring ideas to life</span
+    > through seamless and interactive digital experiences. What sets me apart is
+    my <span
+      class="highlight-animate before:bg-blue-200 dark:before:bg-blue-900"
+      >"do rather than talk"</span
+    > attitude. I thrive on challenges and dive headfirst into coding, designing,
+    and <span
+      class="highlight-animate before:bg-orange-200 dark:before:bg-orange-900"
+      >problem-solving</span
+    >. My portfolio isn't just a showcase of projects; it's a testament to my
+    dedication and drive. You won't find empty promises here – just real,
+    <span class="highlight-animate before:bg-teal-200 dark:before:bg-teal-900"
+      >tangible results</span
+    >.
+  </p>
+</div>
+
+<style>
+  .highlight-animate {
+    position: relative;
+  }
+  .highlight-animate::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    z-index: -10;
+    width: 0;
+  }
+
+  .animate-text::before {
+    animation: highlight 1s forwards;
+  }
+
+  @keyframes highlight {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  const highlight_words = document.getElementsByClassName(" highlight-animate");
+
+  function highlight() {
+    for (let i = 0; i < highlight_words.length; i++) {
+      setTimeout(() => {
+        highlight_words[i].classList.add("animate-text");
+      }, i * 500);
+    }
+  }
+
+  highlight();
+</script>
