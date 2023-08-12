@@ -4,22 +4,31 @@ interface Props {
   name: string;
   info: string;
   stack: string;
+  link: string;
 }
 
-const { image, name, info, stack } = Astro.props;
+const { image, name, info, stack, link } = Astro.props;
 ---
 
-<div
-  class="flex gap-2 rounded-md transition-colors border-2 border-gray-400 dark:border-gray-600 hover:border-gray-600 dark:hover:border-gray-400 p-2"
->
-  <img src={`..${image}`} alt="" class="h-32 w-40 object-cover" />
-  <div>
-    <h1 class="text-lg font-medium">{name}</h1>
-    <p class="text-sm">{info}</p>
-    <p
-      class="mt-2 pl-2 rounded-md text-sm text-white dark:text-black font-semibold bg-emerald-600 dark:bg-emerald-200"
-    >
-      {stack}
-    </p>
+<a href={link} target="_blank">
+  <div
+    class="flex gap-2 rounded-md transition-colors border-2 border-gray-400 dark:border-gray-600 hover:border-gray-600 dark:hover:border-gray-400 px-2 py-4 md:p-2"
+  >
+    <img
+      src={`..${image}`}
+      alt=""
+      class="w-36 md:h-32 md:w-40 object-cover rounded-md"
+    />
+    <div>
+      <h1 class="text-base md:text-lg font-semibold md:font-medium">
+        {name}
+      </h1>
+      <p class="text-sm">{info}</p>
+      <p
+        class="mt-2 pl-2 rounded-md text-xs md:text-sm text-white dark:text-black font-semibold bg-emerald-600 dark:bg-emerald-200"
+      >
+        {stack}
+      </p>
+    </div>
   </div>
-</div>
+</a>
