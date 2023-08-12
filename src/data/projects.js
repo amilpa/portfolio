@@ -1,24 +1,28 @@
-import ChatAppImage from '../assets/chatapp.png'
+import ChatAppImage from "../assets/chatapp.png";
 
-export const Projects = [
+export const Project_data = [
   {
     name: "React chat app",
     info: "Simple chat app with a single room.Users can join the room and chat with each other.",
-    img: ChatAppImage,
+    stack: "React, Node, Express, Socket.io",
+    image: ChatAppImage,
   },
   {
     name: "React chat app",
     info: "Simple chat app with a single room.Users can join the room and chat with each other.",
-    img: ChatAppImage,
+    stack: "React, Node, Express, Socket.io",
+    image: ChatAppImage,
   },
   {
     name: "React chat app",
     info: "Simple chat app with a single room.Users can join the room and chat with each other.",
-    img: ChatAppImage,
+    stack: "React, Node, Express, Socket.io",
+    image: ChatAppImage,
   },
   {
     name: "React chat app",
     info: "Simple chat app with a single room.Users can join the room and chat with each other.",
-    img: ChatAppImage,
+    stack: "React, Node, Express, Socket.io",
+    image: ChatAppImage,
   },
 ]
