@@ -20,7 +20,7 @@ export const Project_data = [
   {
     name: "Full stack ecommerce app",
     info: "Ecommerce app where everyone can sell their products and buy products from other sellers.",
-    stack: "Nextjs(app router)",
+    stack: "Nextjs ( app router ) ",
     link: "https://sellfast.vercel.app",
     image: EcommerceImage,
   },
