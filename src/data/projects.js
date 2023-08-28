@@ -1,6 +1,6 @@
 import ChatAppImage from "../assets/chatapp.png";
 import NotesAppImage from "../assets/notesapp.jpeg";
-import EcommerceImage from "../assets/sellfast.png";
+import EcommerceImage from "../assets/ecommerce.jpeg";
 
 export const Project_data = [
   {
