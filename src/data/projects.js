@@ -1,5 +1,6 @@
 import ChatAppImage from "../assets/chatapp.png";
 import NotesAppImage from "../assets/notesapp.jpeg";
+import EcommerceImage from "../assets/sellfast.png";
 
 export const Project_data = [
   {
@@ -16,4 +17,11 @@ export const Project_data = [
     link: "https://react-notes-app-tau.vercel.app",
     image: NotesAppImage,
   },
-]
+  {
+    name: "Full stack ecommerce app",
+    info: "Ecommerce app with full functionality.Users can add products to cart, place orders, pay with paypal, admin can add products, update products, delete products, update order status.",
+    stack: "Nextjs(app router)",
+    link: "https://sellfast.vercel.app",
+    image: EcommerceImage,
+  },
+];
