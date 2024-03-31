@@ -7,13 +7,12 @@ import { Project_data } from "../data/projects";
   <div class="text-xl font-semibold border-b-2 border-black dark:border-white">
     Projects
   </div>
-  <div class="mt-8 flex flex-col gap-4">
+  <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
     {
       Project_data.map((project) => (
         <ProjectCard
           name={project.name}
           info={project.info}
-          stack={project.stack}
           image={project.image}
           link={project.link}
         />
