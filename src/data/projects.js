@@ -1,41 +1,41 @@
+import Fasal from "../assets/Fasal.png";
+import Orma from "../assets/Orma.png";
 import SageImage from "../assets/Sage.png";
 import ChatAppImage from "../assets/chatapp.png";
 import Connect4Image from "../assets/connect-4.jpg";
 import EcommerceImage from "../assets/ecommerce.jpeg";
 import NotesAppImage from "../assets/notesapp.jpeg";
 import Visita from "../assets/visita.jpg";
-import Orma from "../assets/Orma.png";
-import Fasal from "../assets/Fasal.png";
 
 export const Project_data = [
   {
     name: "Orma",
     info: "Orma, a memory journal app tailored for individuals in the early stages of dementia.",
-    link: "https://www.youtube.com/watch?v=YiZTMH_aplY&t=76s",
+    link: "https://youtu.be/BTkNJ273yms",
     image: Orma,
   },
   {
     name: "Fasal",
     info: "An agricultural application which revolutionizes farming with data-driven predictions.",
-    link: "https://youtu.be/QGSFvOm3z98?si=KrywB47n85NLQBLB",
+    link: "https://youtu.be/O_Que5cRjYQ",
     image: Fasal,
   },
   {
     name: "Sage",
     info: "Web app prioritizing mental well-being for corporate professionals' needs.",
-    link: "https://www.youtube.com/watch?v=mLvfAb-s0-w",
+    link: "https://youtu.be/OEDwXjNIF5g",
     image: SageImage,
   },
   {
     name: "Visita",
     info: "Travel app tailors destinations for personalized exploration experiences.",
-    link: "https://www.youtube.com/watch?v=Kc6Ow0M1vlk",
+    link: "https://github.com/amilpa/visita",
     image: Visita,
   },
   {
     name: "Connect-4",
     info: "Connect 4 web game built with React and Socket.IO for multiplayer functionality.",
-    link: "https://www.youtube.com/watch?v=sB6N7P7e4XY",
+    link: "https://github.com/amilpa/connect-4",
     image: Connect4Image,
   },
   {
