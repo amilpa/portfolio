@@ -35,7 +35,7 @@ export const Project_data = [
   {
     name: "Connect-4",
     info: "Connect 4 web game built with React and Socket.IO for multiplayer functionality.",
-    link: "https://github.com/amilpa/connect-4",
+    link: "https://youtu.be/_ChbAQFl9Os",
     image: Connect4Image,
   },
   {
