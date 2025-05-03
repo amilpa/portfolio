@@ -6,13 +6,27 @@ import Connect4Image from "../assets/connect-4.jpg";
 import EcommerceImage from "../assets/ecommerce.jpeg";
 import NotesAppImage from "../assets/notesapp.jpeg";
 import Visita from "../assets/visita.jpg";
+import Celluloid from "../assets/celluloid.jpg";
+import ForGood from "../assets/forgood.jpg";
 
 export const Project_data = [
+  {
+    name: "Celluloid",
+    info: "Celluloid is a human-AI framework that streamlines screenplay writing with genre-specific agents and boosts narrative quality.",
+    link: "https://github.com/amilpa/celluloid-web-v2",
+    image: Celluloid,
+  },
   {
     name: "Orma",
     info: "Orma, a memory journal app tailored for individuals in the early stages of dementia.",
     link: "https://youtu.be/BTkNJ273yms",
     image: Orma,
+  },
+  {
+    name: "Connect For Good",
+    info: "A web app that connects volunteers with social impact projects, allowing for easy event discovery, creation, and seamless coordination.",
+    link: "https://github.com/amilpa/connect-for-good",
+    image: ForGood,
   },
   {
     name: "Fasal",
