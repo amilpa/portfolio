@@ -12,7 +12,7 @@ import ForGood from "../assets/forgood.jpg";
 export const Project_data = [
   {
     name: "Celluloid",
-    info: "Celluloid is a human-AI framework that streamlines screenplay writing with genre-specific agents.",
+    info: "Celluloid is a human-AI framework that streamlines screenplay writing with genre agents.",
     link: "https://github.com/amilpa/celluloid-web-v2",
     image: Celluloid,
   },
@@ -24,7 +24,7 @@ export const Project_data = [
   },
   {
     name: "Connect For Good",
-    info: "A web app that connects volunteers with social impact projects for easy event discovery and coordination.",
+    info: "A web app that connects volunteers with social projects for easy event discovery and coordination.",
     link: "https://github.com/amilpa/connect-for-good",
     image: ForGood,
   },
