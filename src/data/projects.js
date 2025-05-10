@@ -13,7 +13,7 @@ export const Project_data = [
   {
     name: "Celluloid",
     info: "Celluloid is a human-AI framework that streamlines screenplay writing with genre agents.",
-    link: "https://github.com/amilpa/celluloid-web-v2",
+    link: "https://youtu.be/rU5nwnDYaOM",
     image: Celluloid,
   },
   {
