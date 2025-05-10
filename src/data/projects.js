@@ -13,7 +13,7 @@ export const Project_data = [
   {
     name: "Celluloid",
     info: "Celluloid is a human-AI framework that streamlines screenplay writing with genre agents.",
-    link: "https://youtu.be/rU5nwnDYaOM",
+    link: "https://celluloid.netlify.app/",
     image: Celluloid,
   },
   {
